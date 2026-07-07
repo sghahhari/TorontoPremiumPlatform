@@ -1,4 +1,4 @@
-# Sea of Style — Vite + React + Tailwind (Serverless-Friendly)
+# TorontoPremium — Vite + React + Tailwind (Serverless)
 
 Production-ready frontend for an AWS-friendly, serverless e-commerce site.
 
