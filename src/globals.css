@@ -7,18 +7,18 @@
 
 @layer base {
   :root {
-    --sand: #F5F0E8;
-    --cream: #FAF7F2;
-    --warm-white: #FEFCF9;
-    --amber: #E8A84C;
-    --coral: #E07B5A;
-    --terracotta: #C96B3A;
+    --ivory: #EFEADF;
+    --warm-ivory: #F6F4EE;
+    --warm-white: #FEFDFB;
+    --brass: #C6A15B;
+    --copper: #8C5A34;
+    --deep-green: #1F4235;
   }
 
   body {
     font-family: 'Inter', sans-serif;
-    background-color: #FAF7F2;
-    color: #111111;
+    background-color: #F6F4EE;
+    color: #16231D;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -38,14 +38,14 @@ html {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #FAF7F2;
+  background: #F6F4EE;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D4C9B8;
+  background: #C7B896;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #E8A84C;
+  background: #C6A15B;
 }
 
 /* Prevent layout shift */

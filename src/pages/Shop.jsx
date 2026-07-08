@@ -71,8 +71,8 @@ export default function Shop() {
   const FilterSidebar = () => (
     <>
       <div className="flex items-center gap-2 mb-7">
-        <Filter className="w-4 h-4 text-[#111111]" />
-        <h2 className="text-xs font-semibold tracking-widest uppercase text-[#111111]">Filters</h2>
+        <Filter className="w-4 h-4 text-[#16231D]" />
+        <h2 className="text-xs font-semibold tracking-widest uppercase text-[#16231D]">Filters</h2>
       </div>
 
       <div className="mb-7">
@@ -84,8 +84,8 @@ export default function Shop() {
               onClick={() => { setSelectedCategory(cat); setMobileFiltersOpen(false); }}
               className={`w-full text-left px-3 py-2 rounded-lg transition-colors text-sm ${
                 selectedCategory === cat
-                  ? 'bg-[#111111] text-white font-medium'
-                  : 'text-[#4A4A4A] hover:bg-[#F5EFE0]'
+                  ? 'bg-[#16231D] text-white font-medium'
+                  : 'text-[#4B534E] hover:bg-[#ECE6D6]'
               }`}
             >
               {cat}
@@ -103,8 +103,8 @@ export default function Shop() {
               onClick={() => { setPriceRange(opt.value); setMobileFiltersOpen(false); }}
               className={`w-full text-left px-3 py-2 rounded-lg transition-colors text-sm ${
                 priceRange === opt.value
-                  ? 'bg-[#111111] text-white font-medium'
-                  : 'text-[#4A4A4A] hover:bg-[#F5EFE0]'
+                  ? 'bg-[#16231D] text-white font-medium'
+                  : 'text-[#4B534E] hover:bg-[#ECE6D6]'
               }`}
             >
               {opt.label}
@@ -116,13 +116,13 @@ export default function Shop() {
   );
 
   return (
-    <div className="min-h-screen bg-[#FAF7F2] py-12">
+    <div className="min-h-screen bg-[#F6F4EE] py-12">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Header */}
         <div className="mb-12">
-          <p className="text-xs font-semibold tracking-widest uppercase text-[#C96B3A] mb-3">Collection</p>
+          <p className="text-xs font-semibold tracking-widest uppercase text-[#1F4235] mb-3">Collection</p>
           <h1
-            className="text-5xl md:text-6xl font-black text-[#111111] mb-2"
+            className="text-5xl md:text-6xl font-black text-[#16231D] mb-2"
             style={{ fontFamily: 'Playfair Display, serif' }}
           >
             Shop All
@@ -144,7 +144,7 @@ export default function Shop() {
           <div className="lg:hidden mb-4">
             <button
               onClick={() => setMobileFiltersOpen(!mobileFiltersOpen)}
-              className="flex items-center gap-2 px-5 py-2.5 bg-white rounded-full text-sm font-medium hover:bg-[#F5EFE0] transition-colors border border-[#111111]/10"
+              className="flex items-center gap-2 px-5 py-2.5 bg-white rounded-full text-sm font-medium hover:bg-[#ECE6D6] transition-colors border border-[#16231D]/10"
             >
               <Filter className="w-4 h-4" />
               Filters
@@ -154,17 +154,17 @@ export default function Shop() {
           {/* Mobile filters drawer */}
           {mobileFiltersOpen && (
             <div
-              className="lg:hidden fixed inset-0 bg-[#111111]/60 z-50"
+              className="lg:hidden fixed inset-0 bg-[#16231D]/60 z-50"
               onClick={() => setMobileFiltersOpen(false)}
             >
               <div
-                className="absolute right-0 top-0 bottom-0 w-72 max-w-full bg-[#FAF7F2] p-8 overflow-y-auto"
+                className="absolute right-0 top-0 bottom-0 w-72 max-w-full bg-[#F6F4EE] p-8 overflow-y-auto"
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="flex items-center justify-between mb-8">
-                  <h2 className="text-xs font-semibold tracking-widest uppercase text-[#111111]">Filters</h2>
+                  <h2 className="text-xs font-semibold tracking-widest uppercase text-[#16231D]">Filters</h2>
                   <button onClick={() => setMobileFiltersOpen(false)}>
-                    <X className="w-5 h-5 text-[#111111]" />
+                    <X className="w-5 h-5 text-[#16231D]" />
                   </button>
                 </div>
                 <FilterSidebar />
@@ -193,10 +193,10 @@ export default function Shop() {
             {!loading && error && (
               <div className="flex flex-col items-center justify-center py-24 text-center">
                 <AlertCircle className="w-12 h-12 text-red-400 mb-4" />
-                <p className="text-[#4A4A4A] mb-6">{error}</p>
+                <p className="text-[#4B534E] mb-6">{error}</p>
                 <button
                   onClick={fetchProducts}
-                  className="px-8 py-3 bg-[#111111] text-white rounded-full text-sm font-semibold hover:bg-[#C96B3A] transition-colors"
+                  className="px-8 py-3 bg-[#16231D] text-white rounded-full text-sm font-semibold hover:bg-[#1F4235] transition-colors"
                 >
                   Try Again
                 </button>
@@ -215,10 +215,10 @@ export default function Shop() {
             {/* Empty state */}
             {!loading && !error && filteredProducts.length === 0 && (
               <div className="text-center py-24">
-                <p className="text-[#4A4A4A] mb-6">No products found matching your filters.</p>
+                <p className="text-[#4B534E] mb-6">No products found matching your filters.</p>
                 <button
                   onClick={() => { setSelectedCategory('All'); setPriceRange('all'); }}
-                  className="px-8 py-3 bg-[#111111] text-white rounded-full text-sm font-semibold hover:bg-[#C96B3A] transition-colors"
+                  className="px-8 py-3 bg-[#16231D] text-white rounded-full text-sm font-semibold hover:bg-[#1F4235] transition-colors"
                 >
                   Clear Filters
                 </button>

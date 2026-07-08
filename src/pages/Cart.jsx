@@ -21,7 +21,7 @@ export default function Cart() {
 
   if (items.length === 0) {
     return (
-      <div className="min-h-screen bg-[#FAF7F2] flex items-center justify-center py-20">
+      <div className="min-h-screen bg-[#F6F4EE] flex items-center justify-center py-20">
         <div className="text-center max-w-md mx-auto px-4">
           <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
             <ShoppingBag className="w-12 h-12 text-gray-400" />
@@ -32,7 +32,7 @@ export default function Cart() {
           </p>
           <Link
             to={createPageUrl('Shop')}
-            className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-full font-medium hover:bg-[#C96B3A] transition-all"
+            className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-full font-medium hover:bg-[#1F4235] transition-all"
           >
             Start Shopping
             <ArrowRight className="w-5 h-5" />
@@ -43,10 +43,10 @@ export default function Cart() {
   }
 
   return (
-    <div className="min-h-screen bg-[#FAF7F2] py-12">
+    <div className="min-h-screen bg-[#F6F4EE] py-12">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <p className="text-xs font-semibold tracking-widest uppercase text-[#C96B3A] mb-3">Your Selection</p>
-        <h1 className="text-5xl font-black text-[#111111] mb-10" style={{fontFamily:'Playfair Display, serif'}}>Shopping Cart</h1>
+        <p className="text-xs font-semibold tracking-widest uppercase text-[#1F4235] mb-3">Your Selection</p>
+        <h1 className="text-5xl font-black text-[#16231D] mb-10" style={{fontFamily:'Playfair Display, serif'}}>Shopping Cart</h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Cart Items */}
@@ -118,14 +118,14 @@ export default function Cart() {
                 </div>
               </div>
               {getTotal() < 100 && (
-                <p className="text-sm text-gray-600 mb-6 p-3 bg-[#F5EFE0] rounded-lg">
+                <p className="text-sm text-gray-600 mb-6 p-3 bg-[#ECE6D6] rounded-lg">
                   Add ${(100 - getTotal()).toFixed(2)} more for free shipping!
                 </p>
               )}
               <p className="text-xs text-gray-400 text-center mb-4">
                 HST (13%) applied · Reg. No. included at checkout
               </p>
-              <button onClick={handleCheckout} className="w-full bg-black text-white py-4 rounded-full font-bold text-lg hover:bg-[#C96B3A] transition-all mb-4">
+              <button onClick={handleCheckout} className="w-full bg-black text-white py-4 rounded-full font-bold text-lg hover:bg-[#1F4235] transition-all mb-4">
                 Proceed to Checkout
               </button>
               <Link to={createPageUrl('Shop')} className="block text-center text-gray-600 hover:text-black transition-colors">

@@ -26,7 +26,7 @@ class AdminErrorBoundary extends Component {
   render() {
     if (this.state.error) {
       return (
-        <div className="min-h-screen bg-[#FAF7F2] flex items-center justify-center p-6">
+        <div className="min-h-screen bg-[#F6F4EE] flex items-center justify-center p-6">
           <div className="max-w-md w-full bg-white rounded-2xl shadow-lg p-8 text-center">
             <AlertCircle className="w-12 h-12 text-red-500 mx-auto mb-4" />
             <h2 className="text-xl font-bold mb-2 text-black">Admin Panel Error</h2>
@@ -216,11 +216,11 @@ function AdminContent() {
   }, [orders, products, users]);
 
   return (
-    <div className="min-h-screen bg-[#FAF7F2] py-12">
+    <div className="min-h-screen bg-[#F6F4EE] py-12">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <Link
           to={createPageUrl('Home')}
-          className="inline-flex items-center gap-2 text-[#111111]/50 hover:text-[#111111] transition-colors mb-8 text-sm font-medium"
+          className="inline-flex items-center gap-2 text-[#16231D]/50 hover:text-[#16231D] transition-colors mb-8 text-sm font-medium"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to store

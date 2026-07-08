@@ -20,7 +20,7 @@ import { CognitoUserPool } from 'amazon-cognito-identity-js';
  *
  *  For EACH resource that the frontend calls (/products, /orders, /admin/*, etc.):
  *
- *  1. API Gateway Console → sos-api → Resources
+ *  1. API Gateway Console → tp-api → Resources
  *  2. Click the resource (e.g. /products)
  *  3. Actions → Enable CORS
  *  4. Set:

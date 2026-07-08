@@ -15,14 +15,14 @@ export const CartProvider = ({ children }) => {
 
   // Persist cart to localStorage
   useEffect(() => {
-    const savedCart = localStorage.getItem('seaofstyle_cart');
+    const savedCart = localStorage.getItem('torontopremium_cart');
     if (savedCart) {
       setItems(JSON.parse(savedCart));
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('seaofstyle_cart', JSON.stringify(items));
+    localStorage.setItem('torontopremium_cart', JSON.stringify(items));
   }, [items]);
 
   const addItem = (product, size, quantity = 1) => {

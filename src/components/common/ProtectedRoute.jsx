@@ -8,7 +8,7 @@ export default function ProtectedRoute({ children, requireAdmin = false }) {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#FAF7F2]">
+      <div className="min-h-screen flex items-center justify-center bg-[#F6F4EE]">
         <div className="text-center">
           <div className="w-12 h-12 border-4 border-orange-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
           <p className="text-gray-600">Loading…</p>
@@ -23,7 +23,7 @@ export default function ProtectedRoute({ children, requireAdmin = false }) {
 
   if (requireAdmin && !isAdmin) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#FAF7F2]">
+      <div className="min-h-screen flex items-center justify-center bg-[#F6F4EE]">
         <div className="max-w-md w-full bg-white rounded-2xl shadow-lg p-8 text-center">
           <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <svg className="w-8 h-8 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">

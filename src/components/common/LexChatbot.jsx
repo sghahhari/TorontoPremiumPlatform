@@ -1,7 +1,7 @@
 /**
  * LexChatbot.jsx
  *
- * Drop-in chat widget for Sea of Style.
+ * Drop-in chat widget for Toronto Premium.
  * ─ Floats at bottom-left of every page (rendered in App.jsx outside the router)
  * ─ Guest users get FAQ intents only; authenticated users get order intents too
  * ─ Sends Cognito ID token in every request so the Lex Lambda can verify the user
@@ -64,7 +64,7 @@ function Bubble({ msg }) {
   return (
     <div className={`flex ${isBot ? 'justify-start' : 'justify-end'} mb-3`}>
       {isBot && (
-        <div className="w-7 h-7 rounded-full bg-[#111111] flex items-center justify-center mr-2 flex-shrink-0 mt-0.5">
+        <div className="w-7 h-7 rounded-full bg-[#16231D] flex items-center justify-center mr-2 flex-shrink-0 mt-0.5">
           <ShoppingBag className="w-3.5 h-3.5 text-white" />
         </div>
       )}
@@ -72,14 +72,14 @@ function Bubble({ msg }) {
         className={`max-w-[78%] px-4 py-2.5 rounded-2xl text-sm leading-relaxed ${
           isBot
             ? 'bg-white border border-gray-100 text-gray-800 rounded-tl-sm shadow-sm'
-            : 'bg-[#111111] text-white rounded-tr-sm'
+            : 'bg-[#16231D] text-white rounded-tr-sm'
         }`}
       >
         {/* Render login link if message contains [LOGIN_LINK] placeholder */}
         {msg.text.includes('[LOGIN_LINK]') ? (
           <span>
             {msg.text.split('[LOGIN_LINK]')[0]}
-            <Link to="/login" className="underline font-semibold text-[#C96B3A]">
+            <Link to="/login" className="underline font-semibold text-[#1F4235]">
               Log In
             </Link>
             {msg.text.split('[LOGIN_LINK]')[1]}
@@ -100,8 +100,8 @@ export default function LexChatbot({ isAuthenticated = false }) {
       id:   'welcome',
       role: 'bot',
       text: isAuthenticated
-        ? 'Hi! 👋 I\'m your Sea of Style assistant. I can help you track orders, check your cart, or answer any questions!'
-        : 'Hi! 👋 Welcome to Sea of Style. I can help with shipping, returns, payments, and product questions. Log in to track your orders!',
+        ? 'Hi! 👋 I\'m your Toronto Premium assistant. I can help you track orders, check your cart, or answer any questions!'
+        : 'Hi! 👋 Welcome to Toronto Premium. I can help with shipping, returns, payments, and product questions. Log in to track your orders!',
     },
   ]);
   const [input,    setInput]    = useState('');
@@ -190,12 +190,12 @@ export default function LexChatbot({ isAuthenticated = false }) {
       {!open && (
         <button
           onClick={() => { setOpen(true); setMinimised(false); }}
-          className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#111111] hover:bg-[#C96B3A] text-white rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 group"
+          className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#16231D] hover:bg-[#1F4235] text-white rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 group"
           aria-label="Open chat"
         >
           <MessageCircle className="w-6 h-6" />
           {/* Pulse ring */}
-          <span className="absolute w-14 h-14 rounded-full border-2 border-[#C96B3A] animate-ping opacity-30 group-hover:opacity-0" />
+          <span className="absolute w-14 h-14 rounded-full border-2 border-[#1F4235] animate-ping opacity-30 group-hover:opacity-0" />
         </button>
       )}
 
@@ -208,9 +208,9 @@ export default function LexChatbot({ isAuthenticated = false }) {
           style={{ maxHeight: 'calc(100vh - 80px)' }}
         >
           {/* Header */}
-          <div className="flex items-center justify-between px-4 py-3.5 bg-[#111111] flex-shrink-0">
+          <div className="flex items-center justify-between px-4 py-3.5 bg-[#16231D] flex-shrink-0">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-[#C96B3A] flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full bg-[#1F4235] flex items-center justify-center">
                 <ShoppingBag className="w-4 h-4 text-white" />
               </div>
               <div>
@@ -241,7 +241,7 @@ export default function LexChatbot({ isAuthenticated = false }) {
           {!minimised && (
             <>
               {/* Messages area */}
-              <div className="flex-1 overflow-y-auto px-4 py-4 bg-[#FAF7F2] space-y-1">
+              <div className="flex-1 overflow-y-auto px-4 py-4 bg-[#F6F4EE] space-y-1">
                 {messages.map((msg) => (
                   <Bubble key={msg.id} msg={msg} />
                 ))}
@@ -253,7 +253,7 @@ export default function LexChatbot({ isAuthenticated = false }) {
                       <button
                         key={chip.label}
                         onClick={() => sendMessage(chip.text)}
-                        className="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-xs text-gray-700 hover:border-[#C96B3A] hover:text-[#C96B3A] transition-colors shadow-sm"
+                        className="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-xs text-gray-700 hover:border-[#1F4235] hover:text-[#1F4235] transition-colors shadow-sm"
                       >
                         {chip.label}
                       </button>
@@ -264,7 +264,7 @@ export default function LexChatbot({ isAuthenticated = false }) {
                 {/* Typing indicator */}
                 {loading && (
                   <div className="flex justify-start mb-3">
-                    <div className="w-7 h-7 rounded-full bg-[#111111] flex items-center justify-center mr-2 flex-shrink-0">
+                    <div className="w-7 h-7 rounded-full bg-[#16231D] flex items-center justify-center mr-2 flex-shrink-0">
                       <ShoppingBag className="w-3.5 h-3.5 text-white" />
                     </div>
                     <div className="bg-white border border-gray-100 rounded-2xl rounded-tl-sm px-4 py-3 shadow-sm">
@@ -282,7 +282,7 @@ export default function LexChatbot({ isAuthenticated = false }) {
 
               {/* Input area */}
               <div className="px-4 py-3 border-t border-gray-100 bg-white flex-shrink-0">
-                <div className="flex items-center gap-2 bg-[#F5EFE0] rounded-xl px-3 py-2">
+                <div className="flex items-center gap-2 bg-[#ECE6D6] rounded-xl px-3 py-2">
                   <input
                     ref={inputRef}
                     type="text"
@@ -296,7 +296,7 @@ export default function LexChatbot({ isAuthenticated = false }) {
                   <button
                     onClick={() => sendMessage(input)}
                     disabled={!input.trim() || loading}
-                    className="w-8 h-8 bg-[#111111] hover:bg-[#C96B3A] disabled:bg-gray-300 rounded-lg flex items-center justify-center transition-colors flex-shrink-0"
+                    className="w-8 h-8 bg-[#16231D] hover:bg-[#1F4235] disabled:bg-gray-300 rounded-lg flex items-center justify-center transition-colors flex-shrink-0"
                     aria-label="Send message"
                   >
                     {loading

@@ -54,7 +54,7 @@ function mapAttrs(attrs = []) {
  *
  * Admin detection:
  *   Primary:  custom:role attribute === 'admin'   ← YOUR SETUP
- *   Fallback: cognito:groups includes 'sos-admins' in the ID token
+ *   Fallback: cognito:groups includes 'tp-admins' in the ID token
  *
  * Name resolution (never falls back to the sub UUID):
  *   name attribute → given_name attribute → email
@@ -70,7 +70,7 @@ function buildAppUser(cognitoUser, session, attrsObj) {
       const idToken = session.getIdToken().getJwtToken();
       const payload = JSON.parse(atob(idToken.split('.')[1]));
       const groups  = payload['cognito:groups'] || [];
-      if (groups.includes('sos-admins')) isAdmin = true;
+      if (groups.includes('tp-admins')) isAdmin = true;
     } catch {
       // ignore — ID token parse errors are non-fatal
     }
@@ -249,8 +249,8 @@ async function cognitoChangePassword(oldPassword, newPassword) {
 }
 
 // ─── Mock auth (dev fallback only) ────────────────────────────────────────────
-const CURRENT_USER_KEY = 'sos_current_user_v1';
-const USERS_KEY        = 'sos_users_v1';
+const CURRENT_USER_KEY = 'tp_current_user_v1';
+const USERS_KEY        = 'tp_users_v1';
 
 function readUsers()         { try { return JSON.parse(localStorage.getItem(USERS_KEY) || '[]'); }         catch { return []; }   }
 function writeUsers(u)       { localStorage.setItem(USERS_KEY, JSON.stringify(u)); }
@@ -260,8 +260,8 @@ function writeCurrentUser(u) { localStorage.setItem(CURRENT_USER_KEY, JSON.strin
 function seedAdminIfNeeded() {
   if (readUsers().length > 0) return;
   writeUsers([
-    { id: 'u_admin_1', email: 'admin@seaofstyle.com', name: 'Admin', role: 'admin', password: 'admin123', createdAt: new Date().toISOString() },
-    { id: 'u_user_1',  email: 'user@seaofstyle.com',  name: 'User',  role: 'user',  password: 'user123',  createdAt: new Date().toISOString() },
+    { id: 'u_admin_1', email: 'admin@torontopremium.com', name: 'Admin', role: 'admin', password: 'admin123', createdAt: new Date().toISOString() },
+    { id: 'u_user_1',  email: 'user@torontopremium.com',  name: 'User',  role: 'user',  password: 'user123',  createdAt: new Date().toISOString() },
   ]);
 }
 

@@ -34,7 +34,7 @@ const itemName = (item) =>
 /** @type {Record<string, string>} */
 const STATUS_STYLES = {
   Delivered:  'bg-green-100  text-green-700',
-  Confirmed:  'bg-[#F5EFE0]  text-[#C96B3A]',
+  Confirmed:  'bg-[#ECE6D6]  text-[#1F4235]',
   Shipped:    'bg-blue-100   text-blue-700',
   Cancelled:  'bg-red-100    text-red-700',
   Processing: 'bg-yellow-100 text-yellow-700',
@@ -140,10 +140,10 @@ function AccountContent() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF7F2] py-12">
+    <div className="min-h-screen bg-[#F6F4EE] py-12">
       <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
         <h1
-          className="text-5xl font-black text-[#111111] mb-10"
+          className="text-5xl font-black text-[#16231D] mb-10"
           style={{ fontFamily: 'Playfair Display, serif' }}
         >
           My Account
@@ -177,8 +177,8 @@ function AccountContent() {
                     onClick={() => setActiveTab(key)}
                     className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
                       activeTab === key
-                        ? 'bg-[#111111] text-white'
-                        : 'hover:bg-[#F5EFE0] text-gray-700'
+                        ? 'bg-[#16231D] text-white'
+                        : 'hover:bg-[#ECE6D6] text-gray-700'
                     }`}
                   >
                     <Icon className="w-5 h-5" />
@@ -210,7 +210,7 @@ function AccountContent() {
                       type="text"
                       value={profileData.name}
                       onChange={(e) => setProfileData({ ...profileData, name: e.target.value })}
-                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#C96B3A] focus:outline-none"
+                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#1F4235] focus:outline-none"
                     />
                   </div>
                   <div>
@@ -219,7 +219,7 @@ function AccountContent() {
                       type="email"
                       value={profileData.email}
                       onChange={(e) => setProfileData({ ...profileData, email: e.target.value })}
-                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#C96B3A] focus:outline-none"
+                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#1F4235] focus:outline-none"
                     />
                     {isCognito && (
                       <p className="text-xs text-gray-500 mt-1">
@@ -230,7 +230,7 @@ function AccountContent() {
                   <button
                     type="submit"
                     disabled={profileSaving}
-                    className="w-full py-3 bg-[#111111] text-white rounded-full font-bold hover:bg-[#C96B3A] transition-colors disabled:opacity-60"
+                    className="w-full py-3 bg-[#16231D] text-white rounded-full font-bold hover:bg-[#1F4235] transition-colors disabled:opacity-60"
                   >
                     {profileSaving ? 'Saving…' : 'Save Changes'}
                   </button>
@@ -262,10 +262,10 @@ function AccountContent() {
 
                 {/* Empty state */}
                 {!ordersLoading && !ordersError && orders.length === 0 && (
-                  <div className="p-6 bg-[#F5EFE0] rounded-xl text-sm text-gray-700">
+                  <div className="p-6 bg-[#ECE6D6] rounded-xl text-sm text-gray-700">
                     No orders yet.{' '}
                     <Link
-                      className="font-semibold text-[#C96B3A] hover:underline"
+                      className="font-semibold text-[#1F4235] hover:underline"
                       to={createPageUrl('Shop')}
                     >
                       Start shopping
@@ -289,7 +289,7 @@ function AccountContent() {
                       return (
                         <div
                           key={orderId}
-                          className="border-2 border-gray-100 rounded-xl p-6 hover:border-[#E8A84C]/40 transition-colors"
+                          className="border-2 border-gray-100 rounded-xl p-6 hover:border-[#C6A15B]/40 transition-colors"
                         >
                           {/* Row 1 — order number + status badge */}
                           <div className="flex justify-between items-start mb-1">
@@ -317,7 +317,7 @@ function AccountContent() {
                                     key={idx}
                                     className="flex items-center gap-2 text-sm text-gray-700"
                                   >
-                                    <span className="w-1.5 h-1.5 rounded-full bg-[#C96B3A] flex-shrink-0" />
+                                    <span className="w-1.5 h-1.5 rounded-full bg-[#1F4235] flex-shrink-0" />
                                     {name
                                       ? <>{name}{qty > 1 && <span className="text-gray-400 ml-1">× {qty}</span>}</>
                                       : <span className="text-gray-400 italic">Item {idx + 1}</span>
@@ -359,7 +359,7 @@ function AccountContent() {
                         onChange={(e) =>
                           setPasswordData({ ...passwordData, oldPassword: e.target.value })
                         }
-                        className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#C96B3A] focus:outline-none"
+                        className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#1F4235] focus:outline-none"
                         required
                       />
                     </div>
@@ -371,7 +371,7 @@ function AccountContent() {
                         onChange={(e) =>
                           setPasswordData({ ...passwordData, newPassword: e.target.value })
                         }
-                        className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#C96B3A] focus:outline-none"
+                        className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#1F4235] focus:outline-none"
                         required
                         minLength={8}
                       />
@@ -384,20 +384,20 @@ function AccountContent() {
                         onChange={(e) =>
                           setPasswordData({ ...passwordData, confirmPassword: e.target.value })
                         }
-                        className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#C96B3A] focus:outline-none"
+                        className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#1F4235] focus:outline-none"
                         required
                       />
                     </div>
                     <button
                       type="submit"
                       disabled={passwordSaving}
-                      className="w-full py-3 bg-[#111111] text-white rounded-full font-bold hover:bg-[#C96B3A] transition-colors disabled:opacity-60"
+                      className="w-full py-3 bg-[#16231D] text-white rounded-full font-bold hover:bg-[#1F4235] transition-colors disabled:opacity-60"
                     >
                       {passwordSaving ? 'Updating…' : 'Update Password'}
                     </button>
                   </form>
                 ) : (
-                  <div className="p-4 bg-[#F5EFE0] rounded-xl text-sm text-gray-700">
+                  <div className="p-4 bg-[#ECE6D6] rounded-xl text-sm text-gray-700">
                     Password management is only available when using Cognito authentication.
                   </div>
                 )}

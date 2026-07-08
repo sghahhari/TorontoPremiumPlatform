@@ -77,7 +77,7 @@ export default function Checkout() {
       // Stripe redirects back to a new page load, clearing React state.
       // CheckoutSuccess reads this snapshot to save items to the order.
       try {
-        sessionStorage.setItem('sos_checkout_cart', JSON.stringify({
+        sessionStorage.setItem('tp_checkout_cart', JSON.stringify({
           items: items.map(i => ({
             productId: i.product.id,
             name:      i.product.name,
@@ -101,10 +101,10 @@ export default function Checkout() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF7F2] py-12">
+    <div className="min-h-screen bg-[#F6F4EE] py-12">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <p className="text-xs font-semibold tracking-widest uppercase text-[#C96B3A] mb-3">Checkout</p>
-        <h1 className="text-5xl font-black text-[#111111] mb-10" style={{ fontFamily: 'Playfair Display, serif' }}>
+        <p className="text-xs font-semibold tracking-widest uppercase text-[#1F4235] mb-3">Checkout</p>
+        <h1 className="text-5xl font-black text-[#16231D] mb-10" style={{ fontFamily: 'Playfair Display, serif' }}>
           Finalize your order
         </h1>
 
@@ -126,7 +126,7 @@ export default function Checkout() {
                     <input
                       value={form.fullName}
                       onChange={(e) => setForm((p) => ({ ...p, fullName: e.target.value }))}
-                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#C96B3A] focus:outline-none"
+                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#1F4235] focus:outline-none"
                       required
                     />
                   </div>
@@ -136,7 +136,7 @@ export default function Checkout() {
                       type="email"
                       value={form.email}
                       onChange={(e) => setForm((p) => ({ ...p, email: e.target.value }))}
-                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#C96B3A] focus:outline-none"
+                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#1F4235] focus:outline-none"
                       required
                     />
                   </div>
@@ -147,7 +147,7 @@ export default function Checkout() {
                   <input
                     value={form.address}
                     onChange={(e) => setForm((p) => ({ ...p, address: e.target.value }))}
-                    className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#C96B3A] focus:outline-none"
+                    className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#1F4235] focus:outline-none"
                     placeholder="123 Main St"
                     required
                   />
@@ -159,7 +159,7 @@ export default function Checkout() {
                     <input
                       value={form.city}
                       onChange={(e) => setForm((p) => ({ ...p, city: e.target.value }))}
-                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#C96B3A] focus:outline-none"
+                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#1F4235] focus:outline-none"
                       required
                     />
                   </div>
@@ -168,7 +168,7 @@ export default function Checkout() {
                     <input
                       value={form.postal}
                       onChange={(e) => setForm((p) => ({ ...p, postal: e.target.value }))}
-                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#C96B3A] focus:outline-none"
+                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#1F4235] focus:outline-none"
                       required
                     />
                   </div>
@@ -177,7 +177,7 @@ export default function Checkout() {
                     <input
                       value={form.country}
                       onChange={(e) => setForm((p) => ({ ...p, country: e.target.value }))}
-                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#C96B3A] focus:outline-none"
+                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#1F4235] focus:outline-none"
                       required
                     />
                   </div>
@@ -185,14 +185,14 @@ export default function Checkout() {
 
                 <div className="mt-8">
                   <h3 className="text-xl font-bold text-black mb-3">Payment</h3>
-                  <div className="p-4 bg-[#F5EFE0] rounded-lg text-sm text-[#4A4A4A]">
+                  <div className="p-4 bg-[#ECE6D6] rounded-lg text-sm text-[#4B534E]">
                     You will be redirected to Stripe to complete payment.
                   </div>
                 </div>
 
                 <button
                   disabled={loading}
-                  className="mt-6 w-full bg-black text-white py-4 rounded-full font-bold text-lg hover:bg-[#C96B3A] transition-all disabled:opacity-60"
+                  className="mt-6 w-full bg-black text-white py-4 rounded-full font-bold text-lg hover:bg-[#1F4235] transition-all disabled:opacity-60"
                 >
                   {loading ? 'Redirecting…' : `Pay with Stripe ($${totals.total.toFixed(2)})`}
                 </button>

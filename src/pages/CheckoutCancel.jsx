@@ -8,7 +8,7 @@ export default function CheckoutCancel() {
   // User can return to cart and retry checkout without losing items
 
   return (
-    <div className="min-h-screen bg-[#FAF7F2] flex items-center justify-center p-4">
+    <div className="min-h-screen bg-[#F6F4EE] flex items-center justify-center p-4">
       <div className="max-w-2xl w-full bg-white rounded-3xl shadow-2xl p-12 text-center">
         <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
           <XCircle className="w-12 h-12 text-orange-600" />

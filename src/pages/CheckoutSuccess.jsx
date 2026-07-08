@@ -38,7 +38,7 @@ export default function CheckoutSuccess() {
         let orderTotals = { subtotal: 0, shipping: 0, total: 0 };
 
         try {
-          const raw = sessionStorage.getItem('sos_checkout_cart');
+          const raw = sessionStorage.getItem('tp_checkout_cart');
           if (raw) {
             const snap  = JSON.parse(raw);
             orderItems  = Array.isArray(snap.items)  ? snap.items  : [];
@@ -58,7 +58,7 @@ export default function CheckoutSuccess() {
 
         setOrderId(result?.orderId || result?.id || null);
 
-        try { sessionStorage.removeItem('sos_checkout_cart'); } catch {}
+        try { sessionStorage.removeItem('tp_checkout_cart'); } catch {}
 
       } catch (err) {
         console.warn('Order save error (non-fatal):', err.message);
@@ -74,7 +74,7 @@ export default function CheckoutSuccess() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#FAF7F2] flex items-center justify-center px-6 py-20">
+    <div className="min-h-screen bg-[#F6F4EE] flex items-center justify-center px-6 py-20">
       <div className="max-w-xl w-full bg-white rounded-2xl shadow-sm p-10 text-center">
 
         {!done ? (
@@ -89,7 +89,7 @@ export default function CheckoutSuccess() {
             </div>
 
             <h1
-              className="text-3xl sm:text-4xl font-black text-[#111111] mb-3"
+              className="text-3xl sm:text-4xl font-black text-[#16231D] mb-3"
               style={{ fontFamily: 'Playfair Display, serif' }}
             >
               Payment successful
@@ -101,14 +101,14 @@ export default function CheckoutSuccess() {
             </p>
 
             {orderId && (
-              <div className="mb-4 p-4 bg-[#F5EFE0] rounded-xl text-sm">
+              <div className="mb-4 p-4 bg-[#ECE6D6] rounded-xl text-sm">
                 <span className="text-gray-700">Order ID: </span>
                 <span className="font-mono font-bold text-xs break-all">{orderId}</span>
               </div>
             )}
 
             {sessionId && !orderId && (
-              <div className="mb-4 p-4 bg-[#F5EFE0] rounded-xl text-sm">
+              <div className="mb-4 p-4 bg-[#ECE6D6] rounded-xl text-sm">
                 <span className="text-gray-700">Session: </span>
                 <span className="font-mono font-bold text-xs break-all">{sessionId}</span>
               </div>
@@ -123,14 +123,14 @@ export default function CheckoutSuccess() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
                 to={createPageUrl('Account')}
-                className="inline-flex items-center justify-center bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-[#C96B3A] transition-colors"
+                className="inline-flex items-center justify-center bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-[#1F4235] transition-colors"
               >
                 View my orders
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Link>
               <Link
                 to={createPageUrl('Shop')}
-                className="inline-flex items-center justify-center bg-white border border-gray-200 text-black px-8 py-3 rounded-full font-semibold hover:border-[#C96B3A] transition-colors"
+                className="inline-flex items-center justify-center bg-white border border-gray-200 text-black px-8 py-3 rounded-full font-semibold hover:border-[#1F4235] transition-colors"
               >
                 Continue shopping
               </Link>

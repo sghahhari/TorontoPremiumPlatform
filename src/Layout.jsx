@@ -8,7 +8,7 @@ function LayoutInner({ children, currentPageName }) {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAF7F2]">
+    <div className="min-h-screen flex flex-col bg-[#F6F4EE]">
       <Navbar />
       <main className="flex-grow">
         {children}

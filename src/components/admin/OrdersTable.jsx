@@ -1,6 +1,6 @@
 import React from 'react';
 
-// Must match exactly what sos-admin-handler accepts
+// Must match exactly what tp-admin-handler accepts
 const STATUSES = ['Processing', 'Confirmed', 'Shipped', 'Delivered', 'Cancelled', 'Refunded'];
 
 export default function OrdersTable({ orders, onUpdateStatus }) {

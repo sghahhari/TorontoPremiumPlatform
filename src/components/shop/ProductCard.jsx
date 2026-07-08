@@ -11,7 +11,7 @@ export default function ProductCard({ product }) {
       to={createPageUrl(`ProductDetail?id=${product.id}`)}
       className="group block"
     >
-      <div className="aspect-square overflow-hidden rounded-2xl bg-[#EDE8DF] mb-4">
+      <div className="aspect-square overflow-hidden rounded-2xl bg-[#ECE6D6] mb-4">
         <img
           src={imgSrc}
           alt={product.name}
@@ -20,16 +20,16 @@ export default function ProductCard({ product }) {
         />
       </div>
       <div className="px-1">
-        <p className="text-[10px] font-semibold tracking-widest uppercase text-[#C96B3A] mb-1">
+        <p className="text-[10px] font-semibold tracking-widest uppercase text-[#1F4235] mb-1">
           {product.category}
         </p>
         <h3
-          className="font-semibold text-[#111111] group-hover:text-[#C96B3A] transition-colors duration-200 leading-snug mb-2"
+          className="font-semibold text-[#16231D] group-hover:text-[#1F4235] transition-colors duration-200 leading-snug mb-2"
           style={{ fontFamily: 'Playfair Display, serif' }}
         >
           {product.name}
         </h3>
-        <p className="text-base font-bold text-[#111111]">
+        <p className="text-base font-bold text-[#16231D]">
           ${product.price.toFixed(2)}
         </p>
       </div>

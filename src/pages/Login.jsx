@@ -90,7 +90,7 @@ function ForgotPasswordModal({ onClose }) {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h2 className="text-2xl font-black text-[#111111] mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>
+            <h2 className="text-2xl font-black text-[#16231D] mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>
               Password reset!
             </h2>
             <p className="text-gray-600 text-sm mb-6">
@@ -98,7 +98,7 @@ function ForgotPasswordModal({ onClose }) {
             </p>
             <button
               onClick={onClose}
-              className="w-full py-3 bg-black text-white rounded-full font-bold hover:bg-[#C96B3A] transition-colors"
+              className="w-full py-3 bg-black text-white rounded-full font-bold hover:bg-[#1F4235] transition-colors"
             >
               Back to Sign in
             </button>
@@ -109,7 +109,7 @@ function ForgotPasswordModal({ onClose }) {
         {step === 'email' && (
           <>
             <div className="mb-6">
-              <h2 className="text-2xl font-black text-[#111111] mb-1" style={{ fontFamily: 'Playfair Display, serif' }}>
+              <h2 className="text-2xl font-black text-[#16231D] mb-1" style={{ fontFamily: 'Playfair Display, serif' }}>
                 Forgot password?
               </h2>
               <p className="text-gray-600 text-sm">
@@ -125,19 +125,19 @@ function ForgotPasswordModal({ onClose }) {
 
             <form onSubmit={handleSendCode} className="space-y-4">
               <div>
-                <label className="block text-sm font-semibold text-[#111111] mb-1">Email</label>
+                <label className="block text-sm font-semibold text-[#16231D] mb-1">Email</label>
                 <input
                   type="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#C96B3A] focus:outline-none"
+                  className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#1F4235] focus:outline-none"
                   placeholder="you@example.com"
                 />
               </div>
               <button
                 disabled={busy}
-                className="w-full py-3 bg-black text-white rounded-full font-bold hover:bg-[#C96B3A] transition-colors disabled:opacity-60"
+                className="w-full py-3 bg-black text-white rounded-full font-bold hover:bg-[#1F4235] transition-colors disabled:opacity-60"
               >
                 {busy ? 'Sending…' : 'Send reset code'}
               </button>
@@ -156,7 +156,7 @@ function ForgotPasswordModal({ onClose }) {
         {step === 'code' && (
           <>
             <div className="mb-6">
-              <h2 className="text-2xl font-black text-[#111111] mb-1" style={{ fontFamily: 'Playfair Display, serif' }}>
+              <h2 className="text-2xl font-black text-[#16231D] mb-1" style={{ fontFamily: 'Playfair Display, serif' }}>
                 Check your email
               </h2>
               <p className="text-gray-600 text-sm">
@@ -172,43 +172,43 @@ function ForgotPasswordModal({ onClose }) {
 
             <form onSubmit={handleResetPassword} className="space-y-4">
               <div>
-                <label className="block text-sm font-semibold text-[#111111] mb-1">Reset code</label>
+                <label className="block text-sm font-semibold text-[#16231D] mb-1">Reset code</label>
                 <input
                   type="text"
                   required
                   value={code}
                   onChange={(e) => setCode(e.target.value.trim())}
-                  className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#C96B3A] focus:outline-none tracking-widest text-center text-lg font-bold"
+                  className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#1F4235] focus:outline-none tracking-widest text-center text-lg font-bold"
                   placeholder="123456"
                   maxLength={8}
                 />
               </div>
               <div>
-                <label className="block text-sm font-semibold text-[#111111] mb-1">New password</label>
+                <label className="block text-sm font-semibold text-[#16231D] mb-1">New password</label>
                 <input
                   type="password"
                   required
                   minLength={8}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#C96B3A] focus:outline-none"
+                  className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#1F4235] focus:outline-none"
                   placeholder="At least 8 characters"
                 />
               </div>
               <div>
-                <label className="block text-sm font-semibold text-[#111111] mb-1">Confirm new password</label>
+                <label className="block text-sm font-semibold text-[#16231D] mb-1">Confirm new password</label>
                 <input
                   type="password"
                   required
                   value={confirm}
                   onChange={(e) => setConfirm(e.target.value)}
-                  className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#C96B3A] focus:outline-none"
+                  className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#1F4235] focus:outline-none"
                   placeholder="••••••••"
                 />
               </div>
               <button
                 disabled={busy}
-                className="w-full py-3 bg-black text-white rounded-full font-bold hover:bg-[#C96B3A] transition-colors disabled:opacity-60"
+                className="w-full py-3 bg-black text-white rounded-full font-bold hover:bg-[#1F4235] transition-colors disabled:opacity-60"
               >
                 {busy ? 'Resetting…' : 'Reset password'}
               </button>
@@ -267,14 +267,14 @@ export default function Login() {
       {/* ── Forgot password modal (shown on top) ── */}
       {showForgot && <ForgotPasswordModal onClose={() => setShowForgot(false)} />}
 
-      <div className="min-h-screen bg-[#FAF7F2] flex items-center justify-center px-6 py-12">
+      <div className="min-h-screen bg-[#F6F4EE] flex items-center justify-center px-6 py-12">
         <div className="w-full max-w-md bg-white rounded-2xl shadow-sm p-8">
           <div className="mb-6">
-            <p className="text-xs font-semibold tracking-widest uppercase text-[#C96B3A] mb-2">
+            <p className="text-xs font-semibold tracking-widest uppercase text-[#1F4235] mb-2">
               Welcome back
             </p>
             <h1
-              className="text-3xl font-black text-[#111111]"
+              className="text-3xl font-black text-[#16231D]"
               style={{ fontFamily: 'Playfair Display, serif' }}
             >
               Sign in
@@ -282,7 +282,7 @@ export default function Login() {
             <p className="text-gray-600 mt-2 text-sm">
               {isMock
                 ? 'Mock auth — swap to Cognito via VITE_AUTH_PROVIDER=cognito.'
-                : 'Sign in with your Sea of Style account.'}
+                : 'Sign in with your Toronto Premium account.'}
             </p>
           </div>
 
@@ -300,14 +300,14 @@ export default function Login() {
 
           <form onSubmit={onSubmit} className="space-y-4">
             <div>
-              <label className="block text-sm font-semibold text-[#111111] mb-1">Email</label>
+              <label className="block text-sm font-semibold text-[#16231D] mb-1">Email</label>
               <input
                 type="email"
                 required
                 autoComplete="email"
                 value={form.email}
                 onChange={(e) => setForm((p) => ({ ...p, email: e.target.value }))}
-                className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#C96B3A] focus:outline-none"
+                className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#1F4235] focus:outline-none"
                 placeholder="you@example.com"
               />
             </div>
@@ -315,12 +315,12 @@ export default function Login() {
             <div>
               {/* ── Password label row with "Forgot password?" link ── */}
               <div className="flex items-center justify-between mb-1">
-                <label className="block text-sm font-semibold text-[#111111]">Password</label>
+                <label className="block text-sm font-semibold text-[#16231D]">Password</label>
                 {!isMock && (
                   <button
                     type="button"
                     onClick={() => setShowForgot(true)}
-                    className="text-xs font-semibold text-[#C96B3A] hover:underline"
+                    className="text-xs font-semibold text-[#1F4235] hover:underline"
                   >
                     Forgot password?
                   </button>
@@ -332,7 +332,7 @@ export default function Login() {
                 autoComplete="current-password"
                 value={form.password}
                 onChange={(e) => setForm((p) => ({ ...p, password: e.target.value }))}
-                className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#C96B3A] focus:outline-none"
+                className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#1F4235] focus:outline-none"
                 placeholder="••••••••"
               />
               {isMock && (
@@ -344,7 +344,7 @@ export default function Login() {
 
             <button
               disabled={loading}
-              className="w-full py-3 bg-black text-white rounded-full font-bold hover:bg-[#C96B3A] transition-colors disabled:opacity-60"
+              className="w-full py-3 bg-black text-white rounded-full font-bold hover:bg-[#1F4235] transition-colors disabled:opacity-60"
             >
               {loading ? 'Signing in…' : 'Sign in'}
             </button>
@@ -352,7 +352,7 @@ export default function Login() {
 
           <div className="mt-6 text-sm text-gray-600">
             Don't have an account?{' '}
-            <Link className="font-semibold text-[#C96B3A] hover:underline" to="/signup">
+            <Link className="font-semibold text-[#1F4235] hover:underline" to="/signup">
               Create one
             </Link>
           </div>
