@@ -1,4 +1,3 @@
-cat > .github/workflows/deploy.yml << 'EOF'
 name: Deploy Frontend to S3 + CloudFront
 
 on:
@@ -58,4 +57,3 @@ jobs:
           aws cloudfront create-invalidation \
             --distribution-id ${{ vars.CLOUDFRONT_DIST_ID }} \
             --paths '/*'
-EOF
