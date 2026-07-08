@@ -99,7 +99,7 @@ export default function Contact() {
                         <input
                           type="text" id="name" name="name" value={formData.name} onChange={handleChange} required
                           className="w-full px-4 py-3 rounded-xl border border-[#16231D]/12 bg-[#FCFAF5] focus:border-[#1F4235] focus:outline-none transition-colors text-sm"
-                          placeholder="Eldar"
+                          placeholder="Shahaboddin"
                         />
                       </div>
                       <div>
@@ -107,7 +107,7 @@ export default function Contact() {
                         <input
                           type="email" id="email" name="email" value={formData.email} onChange={handleChange} required
                           className="w-full px-4 py-3 rounded-xl border border-[#16231D]/12 bg-[#FCFAF5] focus:border-[#1F4235] focus:outline-none transition-colors text-sm"
-                          placeholder="eldar@example.com"
+                          placeholder="shahaboddin@example.com"
                         />
                       </div>
                     </div>
