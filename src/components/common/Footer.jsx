@@ -42,7 +42,7 @@ export default function Footer() {
 
         <div className="border-t border-white/8 pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-[#555555] text-xs">
           <p>© {new Date().getFullYear()} Toronto Premium. All rights reserved.</p>
-          <p>Built by Shirish, Eldar & Amir</p>
+          <p>Built by Shahaboddin</p>
         </div>
       </div>
     </footer>

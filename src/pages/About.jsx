@@ -33,9 +33,9 @@ export default function About() {
               </div>
               <h2 className="text-3xl font-bold text-black" style={{fontFamily:'Playfair Display, serif'}}>The Meaning Behind "Premium"</h2>
             </div>
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              Toronto Premium isn't just a name—it's a standard. It represents the shared commitment of three passionate individuals: <span className="font-bold">Shirish, Eldar, and Amir</span>.
-            </p>
+<p className="text-lg text-gray-700 leading-relaxed mb-6">
+  Toronto Premium isn't just a name—it's a standard. It represents the shared commitment of a small, dedicated team focused on doing things right, every time.
+</p>
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
               Built from the ground up in Toronto, our team brings together diverse perspectives, skills, and creative visions. Every decision—from sourcing to shipping—is held to one bar: is this good enough to put our name on it.
             </p>
@@ -46,26 +46,26 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team Section */}
+{/* How We Operate */}
       <section className="py-24 bg-[#ECE6D6]">
         <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="text-center mb-14">
-            <p className="text-xs font-semibold tracking-widest uppercase text-[#1F4235] mb-3">The Founders</p>
-            <h2 className="text-5xl font-black text-[#16231D]" style={{fontFamily:'Playfair Display, serif'}}>Meet the Team</h2>
-            <p className="text-[#4B534E] mt-3 font-light">The minds behind Toronto Premium</p>
+            <p className="text-xs font-semibold tracking-widest uppercase text-[#1F4235] mb-3">Behind the Scenes</p>
+            <h2 className="text-5xl font-black text-[#16231D]" style={{fontFamily:'Playfair Display, serif'}}>How We Operate</h2>
+            <p className="text-[#4B534E] mt-3 font-light">The disciplines that shape every product decision</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { name: 'Shirish', role: 'Infrastructure Engineer', bg: 'bg-[#E3D2A0]' },
-              { name: 'Eldar', role: 'Lead DevOps Engineer', bg: 'bg-[#D9C9A8]' },
-              { name: 'Amir', role: 'Cloud Solutions Architect', bg: 'bg-[#C9BBA0]' }
-            ].map((member) => (
-              <div key={member.name} className="text-center">
-                <div className={`w-32 h-32 ${member.bg} rounded-full mx-auto mb-4 flex items-center justify-center`}>
-                  <span className="text-4xl font-black text-[#16231D]/30">{member.name[0]}</span>
+              { title: 'Infrastructure', desc: 'A resilient, cloud-native foundation built to scale without compromise.' },
+              { title: 'Operations', desc: 'Careful, consistent delivery from sourcing through to your doorstep.' },
+              { title: 'Architecture', desc: 'Thoughtful systems design so quality holds up as we grow.' }
+            ].map((pillar) => (
+              <div key={pillar.title} className="text-center">
+                <div className="w-32 h-32 bg-white rounded-full mx-auto mb-4 flex items-center justify-center shadow-sm">
+                  <span className="text-3xl font-black text-[#1F4235]">{pillar.title[0]}</span>
                 </div>
-                <h3 className="text-2xl font-bold text-black mb-1" style={{fontFamily:'Playfair Display, serif'}}>{member.name}</h3>
-                <p className="text-[#1F4235] text-xs font-semibold tracking-widest uppercase">{member.role}</p>
+                <h3 className="text-2xl font-bold text-black mb-1" style={{fontFamily:'Playfair Display, serif'}}>{pillar.title}</h3>
+                <p className="text-[#4B534E] text-sm max-w-xs mx-auto mt-2">{pillar.desc}</p>
               </div>
             ))}
           </div>
